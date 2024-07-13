@@ -5,18 +5,13 @@ import { useProgramMetadata } from '@/app/hooks/api';
 
 import { ADDRESS } from '@/consts';
 import metaTxt from '@/assets/meta/hamster.meta.txt';
-
-import NinjaImage from './assets/ninja.png';
-import CoinImage from './assets/coin.png';
 import { Canvas } from '@react-three/fiber'
 import { CameraControls } from '@react-three/drei'
 
-import styles from './style.module.scss';
 
-import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-useGLTF.preload('/monkey.glb')
+useGLTF.preload('/raccoon.glb')
 
 export const Count = () => {
   const alert = useAlert();
@@ -42,27 +37,23 @@ export const Count = () => {
       });
   };
 
-  const { nodes, materials } = useGLTF('/monkey.glb')
-
+  const { nodes } = useGLTF('/raccoon.glb')
   console.log(nodes)
   return (
-    <div className={styles.count}>
-      <div className={styles.coin}>
-        {/* <img src={CoinImage} alt="" /> */}
-        <span style={{ fontSize: 50, color: '#000' }}>{state}</span>
-      </div>
+    <div>
+      <div style={{ fontSize: 50, color: '#000' }}>{state}</div>
       <br />
-      <Canvas style={{ height: 300, width: 300 }} >
-        <ambientLight intensity={100} color="white" />
+      <Canvas style={{ height: 300, width: 300 }} camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 10] }} >
+        <CameraControls />
+        <ambientLight intensity={4} color="white" />
         <directionalLight color="white" position={[0, 0, 10]} />
         <group >
-          <CameraControls />
           <mesh
             castShadow
             receiveShadow
             scale={3.5}
-            geometry={nodes.Suzanne.geometry}
-            material={nodes.Suzanne.material}
+            geometry={nodes.mesh_0.geometry}
+            material={nodes.mesh_0.material}
           />
         </group>
       </Canvas>

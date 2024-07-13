@@ -20,9 +20,6 @@ function Component() {
         <>
           <Header />
           <Routing />
-          {/* <Container> */}
-          {/*   <Footer /> */}
-          {/* </Container> */}
         </>
       ) : (
         <p>init</p>
