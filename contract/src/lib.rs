@@ -4,12 +4,14 @@ use gstd::{msg, prelude::*};
 
 // Define a static mutable variable `COUNTER` to store the click count. It is initially uninitialized.
 static mut COUNTER: Option<u128> = None;
+static mut LINK: Option<String> = None;
 
 // The `init` function is called once when the contract is deployed. It initializes the `COUNTER` to 0.
 #[no_mangle]
 extern fn init() {
     unsafe {
         COUNTER = Some(0);
+        LINK = Some(String::from("Foxy"));
     }
 }
 
@@ -26,8 +28,12 @@ extern fn handle() {
         let counter = unsafe {
             COUNTER.as_mut().expect("Unexpected uninitialized `COUNTER`.")
         };
-        *counter += 1; // Increment the counter.
-        
+        let link = unsafe{
+            LINK.as_mut().expect("Unexpected uninitialized `LINK`.")
+        };
+        *link += "a";
+        *counter += 1; 
+                       
         // Send a reply message with "Success".
         msg::reply_bytes("Success", 0).expect("Unable to reply");
     }
