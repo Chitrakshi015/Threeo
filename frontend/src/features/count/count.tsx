@@ -13,6 +13,11 @@ import { CameraControls } from '@react-three/drei'
 
 import styles from './style.module.scss';
 
+import { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+
+useGLTF.preload('/monkey.glb')
+
 export const Count = () => {
   const alert = useAlert();
   const { state } = useHamsterState();
@@ -37,27 +42,31 @@ export const Count = () => {
       });
   };
 
+  const { nodes, materials } = useGLTF('/monkey.glb')
+
+  console.log(nodes)
   return (
     <div className={styles.count}>
       <div className={styles.coin}>
-        <img src={CoinImage} alt="" />
-        <span>{state}</span>
+        {/* <img src={CoinImage} alt="" /> */}
+        <span style={{ fontSize: 50, color: '#000' }}>{state}</span>
       </div>
       <br />
-      <Canvas>
-        <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 0, 5]} />
-        <mesh scale={3.5}>
-          <boxGeometry />
-          <meshStandardMaterial />
-        </mesh>
-        <CameraControls />
+      <Canvas style={{ height: 300, width: 300 }} >
+        <ambientLight intensity={100} color="white" />
+        <directionalLight color="white" position={[0, 0, 10]} />
+        <group >
+          <CameraControls />
+          <mesh
+            castShadow
+            receiveShadow
+            scale={3.5}
+            geometry={nodes.Suzanne.geometry}
+            material={nodes.Suzanne.material}
+          />
+        </group>
       </Canvas>
       <Button text="Evolve" />
-      {/* <div className={styles.ninja} onClick={onClick}> */}
-      {/*   <img src={NinjaImage} alt="" /> */}
-      {/*   <Button text="Ping" /> */}
-      {/* </div> */}
     </div>
   );
 };
