@@ -1,26 +1,22 @@
 <div class='center'>
-<img src=''>
+<img src='https://icon-library.com/images/enhance-icon/enhance-icon-28.jpg' alt="logo">
 </div>
 
 ### Summary
 
-Idea: Probably something related to 3D printing
+Problem:
 
-Problem: SO so so so many problesm
+Idea:
 
-Solution: This is the only one
+Solution:
 
 ### Screenshot
 
-![]()
+![Screenshot](https://i.ibb.co/rt42LX8/image.png)
 
 ### TechStack
 
-UI/UX: Figma
-
-Frontend: Javascript (React)
-
-Backend: SQLite (pocketbase)
+Frontend: Javascript (React, R3F, GearJS)
 
 SmartContract: Rust (Gear)
 
@@ -28,6 +24,6 @@ SmartContract: Rust (Gear)
 
 | Name                   | Email                     | Telegram    |
 | :--------------------- | :------------------------ | :---------- |
-| Watson Lewis-Rodriguez | `watsonlewrod1@gmail.com` | `watsonlr`    |
+| Watson Lewis-Rodriguez | `watsonlewrod1@gmail.com` | `watsonlr`  |
 | Frank Dierolf          | `frank_dierolf@web.de`    | `frankbevr` |
 | Dennis                 | -                         | -           |
