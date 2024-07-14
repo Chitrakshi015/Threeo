@@ -52,7 +52,7 @@ export const Count = () => {
     <div>
       <div style={{ fontSize: 50, color: '#000', display: 'flex', justifyContent: 'center' }}>{state}</div>
       <br />
-      <Canvas style={{ height: '70vh', width: '80vw' }} camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 10] }} >
+      <Canvas style={{ height: '65vh', width: '80vw' }} camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 10] }} >
         <CameraControls />
         <ambientLight intensity={4} color="white" />
         <directionalLight color="white" position={[0, 0, 10]} />
@@ -114,8 +114,9 @@ export const Count = () => {
           />
         </group>
       </Canvas>
-      <Input />
-      <Button text="add" style={{ width: '100%', marginTop: '18px' }} onClick={onClick} />
+      <Input placeholder='A wonderful beach umbrella' />
+      <Button text="augment your world" style={{ width: '100%', marginTop: '18px' }} onClick={onClick} />
+      <Button text="mint world" style={{ width: '100%', marginTop: '18px', backgroundColor: '#eee' }} onClick={onClick} />
     </div>
   );
 };
