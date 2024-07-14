@@ -30,13 +30,11 @@
 
 ### TechStack
 
-- Frontend: Javascript (React, R3F, GearJS)
+- Frontend: Javascript ([React](https://react.dev/), [R3F](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction), [GearJS](https://github.com/gear-tech/gear-js), [Meshy.ai](https://meshy.ai/))
 
-- SmartContract: Rust (Gear)
+- SmartContract: Rust ([Gear](https://wiki.vara.network/docs/welcome))
 
 ### Team
-
-Dennis
 
 | Name                   | Email                     | Telegram    |
 | :--------------------- | :------------------------ | :---------- |
