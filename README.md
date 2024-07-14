@@ -16,11 +16,13 @@
 
 ### Summary
 
-Problem: Creating & visualize & tokenize a World takes time, effort and skill. 
 
-Idea: 
+**Idea:** `threeo.surge.sh`  
 
-Solution: 
+**Problem:** Create your own Levels, Scenes, Assets in the 3D Space is Hard. The Concept Ownership increases it even more.
+
+**Solution:** Using AI to generate 3D Models. Generate a beautiful scene by typing what you want. Mint the Scene. Throw it in the Realworld via AR. Throw it the Virtual World via VR. Throw it in Decentraland via the Browser. Throw it ... Its yours, do what you feel : )
+
 
 ### Screenshot
 
@@ -28,14 +30,16 @@ Solution:
 
 ### TechStack
 
-Frontend: Javascript (React, R3F, GearJS)
+- Frontend: Javascript (React, R3F, GearJS)
 
-SmartContract: Rust (Gear)
+- SmartContract: Rust (Gear)
 
 ### Team
 
+Dennis
+
 | Name                   | Email                     | Telegram    |
 | :--------------------- | :------------------------ | :---------- |
-| Watson Lewis-Rodriguez | `watsonlewrod1@gmail.com` | `watsonlr`  |
-| Frank Dierolf          | `frank_dierolf@web.de`    | `frankbevr` |
 | Dennis                 | -                         | -           |
+<!--| Watson Lewis-Rodriguez | `watsonlewrod1@gmail.com` | `watsonlr`  |-->
+<!--| Frank Dierolf          | `frank_dierolf@web.de`    | `frankbevr` |-->
