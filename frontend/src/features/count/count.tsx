@@ -1,5 +1,5 @@
 import { useAlert, useHandleCalculateGas, withoutCommas } from '@gear-js/react-hooks';
-import { Button } from '@gear-js/vara-ui';
+import { Button, Input } from '@gear-js/vara-ui';
 import { useHamsterState, useStateMessage } from '@/app/hooks/use-read-state';
 import { useProgramMetadata } from '@/app/hooks/api';
 
@@ -12,6 +12,11 @@ import { CameraControls } from '@react-three/drei'
 import { useGLTF } from '@react-three/drei'
 
 useGLTF.preload('/raccoon.glb')
+
+useGLTF.preload('/a_beautiful_calm_chicken_0714052117_refine.glb')
+useGLTF.preload('/a_beautiful_calm_palm_0714051539_refine.glb')
+useGLTF.preload('/a_beautiful_calm_sun_lounger_0714051525_refine.glb')
+useGLTF.preload('/a_beautiful_calm_waterly_garden_fountain_0714051901_refine.glb')
 
 export const Count = () => {
   const alert = useAlert();
@@ -37,13 +42,17 @@ export const Count = () => {
       });
   };
 
-  const { nodes } = useGLTF('/raccoon.glb')
-  console.log(nodes)
+  const { nodes: raccoon } = useGLTF('/raccoon.glb')
+
+  const { nodes: chicken } = useGLTF('/a_beautiful_calm_chicken_0714052117_refine.glb')
+  const { nodes: palm } = useGLTF('/a_beautiful_calm_palm_0714051539_refine.glb')
+  const { nodes: sun_lounger } = useGLTF('/a_beautiful_calm_sun_lounger_0714051525_refine.glb')
+  const { nodes: fountain } = useGLTF('/a_beautiful_calm_waterly_garden_fountain_0714051901_refine.glb')
   return (
     <div>
-      <div style={{ fontSize: 50, color: '#000' }}>{state}</div>
+      <div style={{ fontSize: 50, color: '#000', display: 'flex', justifyContent: 'center' }}>{state}</div>
       <br />
-      <Canvas style={{ height: 300, width: 300 }} camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 10] }} >
+      <Canvas style={{ height: '70vh', width: '80vw' }} camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 0, 10] }} >
         <CameraControls />
         <ambientLight intensity={4} color="white" />
         <directionalLight color="white" position={[0, 0, 10]} />
@@ -51,13 +60,62 @@ export const Count = () => {
           <mesh
             castShadow
             receiveShadow
+            scale={1}
+            position={[0, 0, 5]} // Adjust position as needed
+            geometry={chicken.mesh_0.geometry}
+            material={chicken.mesh_0.material}
+          />
+          <mesh
+            castShadow
+            receiveShadow
             scale={3.5}
-            geometry={nodes.mesh_0.geometry}
-            material={nodes.mesh_0.material}
+            position={[-2, 1, 4]} // Adjust position as needed
+            geometry={palm.mesh_0.geometry}
+            material={palm.mesh_0.material}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            scale={3.5}
+            position={[-2, 1, 2]} // Adjust position as needed
+            geometry={palm.mesh_0.geometry}
+            material={palm.mesh_0.material}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            scale={3.5}
+            position={[-2, 1, 0]} // Adjust position as needed
+            geometry={palm.mesh_0.geometry}
+            material={palm.mesh_0.material}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            scale={3.5}
+            position={[-2, 1, -2]} // Adjust position as needed
+            geometry={palm.mesh_0.geometry}
+            material={palm.mesh_0.material}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            scale={3.5}
+            geometry={sun_lounger.mesh_0.geometry}
+            material={sun_lounger.mesh_0.material}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            scale={3.5}
+            position={[3, 1, -0]} // Adjust position as needed
+            geometry={fountain.mesh_0.geometry}
+            material={fountain.mesh_0.material}
           />
         </group>
       </Canvas>
-      <Button text="Evolve" />
+      <Input />
+      <Button text="add" style={{ width: '100%', marginTop: '18px' }} onClick={onClick} />
     </div>
   );
 };
