@@ -45,7 +45,7 @@ extern "C" fn handle() {
     }
 }
 
-// The `state` function returns the current state of the `COUNTER`.
+// The `state` function returns the current state of the `COUNTER`. withh corner
 #[no_mangle]
 extern "C" fn state() {
     // Reply with the current value of `COUNTER`. Clone the value to ensure it is not modified by the `handle` function.
